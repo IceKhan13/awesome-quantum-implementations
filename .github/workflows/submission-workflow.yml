@@ -1,0 +1,20 @@
+name: Submission workflow
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  
+  parse-issue:
+    if: ${{ startsWith(github.event.issue.name, 'submission-') }}
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 2
+      matrix:
+        python-version: [3.7]
+    steps:
+      - name: Get $github data
+        run:   echo "$GITHUB_CONTEXT"
+        env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
