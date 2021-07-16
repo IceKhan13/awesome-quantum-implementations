@@ -51,6 +51,31 @@ jobs:
       #     pip install pytest
       #     pytest
       - uses: actions/checkout@v2
+        if: ${{ success() }}
+
+      - name: Install dependencies
+        if: ${{ success() }}
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Update readme
+        if: ${{ success() }}
+        run: |
+          python manager.py add_repo --repo_link=${{ steps.parse-issue.outputs.SUBMISSION_REPO }} --repo_author=${{ github.event.issue.user.html_url }} --repo_description=${{ steps.parse-issue.outputs.SUBMISSION_DESCRIPTION }}
+          python manager.py generate_readme
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "your username"
+          git config --global user.email "your email"
+
+          git checkout -b submission-${{ github.event.issue.number }}
+
+          git add -A
+          git commit -m "Adding ${{ steps.parse-issue.outputs.SUBMISSION_NAME }}"
+          git push
+
       - name: Create Pull Request
         if: ${{ success() }}
         id: cpr
@@ -58,6 +83,8 @@ jobs:
         with:
           commit-message: Add [${{ steps.parse-issue.outputs.SUBMISSION_REPO }}] to list.
           title: Add ${{ steps.parse-issue.outputs.SUBMISSION_NAME }} to list.
+          branch: submission-${{ github.event.issue.number }}
+
       - name: Create comment
         if: ${{ success() }}
         uses: peter-evans/create-or-update-comment@v1
