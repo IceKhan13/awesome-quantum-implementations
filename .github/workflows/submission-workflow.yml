@@ -86,8 +86,8 @@ jobs:
         with:
           commit-message: Add [${{ steps.parse-issue.outputs.SUBMISSION_REPO }}] to list.
           title: Add ${{ steps.parse-issue.outputs.SUBMISSION_NAME }} to list.
-          branch: main
-          base: submission-${{ github.event.issue.number }}-${{ env.TIMESTAMP }}
+          branch: submission-${{ github.event.issue.number }}-${{ env.TIMESTAMP }}
+          base: main
 
       - name: Create comment
         if: ${{ success() }}
