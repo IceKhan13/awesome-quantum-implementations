@@ -29,6 +29,40 @@ jobs:
         python-version: [3.7]
     steps:
       - name: Get $github data
-        run:   echo "$GITHUB_CONTEXT"
+        run: echo "$GITHUB_CONTEXT"
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
+      - name: Parse submission details
+        id: parse-issue
+        run: |
+          echo 1
+          echo '::set-output name=SUBMISSION_REPO::https://github.com/Qiskit/qiskit-terra.git'
+          echo '::set-output name=SUBMISSION_NAME::qiskit-terra'
+          echo '::set-output name=SUBMISSION_DESCRIPTION::Terra'
+      # - name: clone repo
+      #   run: |
+      #     git clone ${{ steps.parse-issue.outputs.SUBMISSION_REPO }}"
+      #     cd ${{ steps.parse-issue.outputs.SUBMISSION_NAME }}"
+      # - name: install deps
+      #   run: |
+      #     pip install -r requirements.txt
+      # - name: run tests
+      #   run: |
+      #     pip install pytest
+      #     pytest
+      - name: Create Pull Request
+        if: ${{ success() }}
+        id: cpr
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: Add [${{ steps.parse-issue.outputs.SUBMISSION_REPO }}] to list.
+          title: Add ${{ steps.parse-issue.outputs.SUBMISSION_NAME }} to list.
+      - name: Create comment
+        if: ${{ success() }}
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            This is a multi-line test comment on successfull submission! :sparkles:
+
+            Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}

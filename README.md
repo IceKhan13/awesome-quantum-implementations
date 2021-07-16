@@ -5,6 +5,8 @@ Curated by community list of implementations of quantum algorithms, software pac
 
 ### Contribution guide
 
+#### Requirements for project
+
 ...
 
 
