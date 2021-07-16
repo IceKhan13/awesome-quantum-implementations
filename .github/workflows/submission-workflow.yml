@@ -51,7 +51,15 @@ jobs:
         run: |
           mkdir testing-${{ env.TIMESTAMP }}
           cd testing-${{ env.TIMESTAMP }}
+          echo "Path"
+          pwd
+          echo "Tree"
+          ls
           git clone ${{ steps.parse-issue.outputs.SUBMISSION_REPO }}
+          echo "Path"
+          pwd
+          echo "Tree"
+          ls
           cd ${{ steps.parse-issue.outputs.SUBMISSION_NAME }}
 
       - name: Install submitted deps
