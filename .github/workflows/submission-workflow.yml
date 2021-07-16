@@ -90,7 +90,7 @@ jobs:
         id: cpr
         uses: peter-evans/create-pull-request@v3
         with:
-          commit-message: [Submission]: Add [${{ steps.parse-issue.outputs.SUBMISSION_REPO }}] to list.
+          commit-message: [Submission] - Add [${{ steps.parse-issue.outputs.SUBMISSION_REPO }}] to list.
           title: Add ${{ steps.parse-issue.outputs.SUBMISSION_NAME }} to list.
           body: |
             Add ${{ steps.parse-issue.outputs.SUBMISSION_NAME }} to list.
