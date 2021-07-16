@@ -71,25 +71,17 @@ jobs:
           python manager.py add_repo --repo_link=${{ steps.parse-issue.outputs.SUBMISSION_REPO }} --repo_author=${{ github.event.issue.user.html_url }} --repo_description=${{ steps.parse-issue.outputs.SUBMISSION_DESCRIPTION }}
           python manager.py generate_readme
 
-#      - name: Commit and push changes
-#        if: ${{ success() }}
-#        run: |
-#          git config --global user.name "your username"
-#          git config --global user.email "your email"
-#
-#          git checkout -b submission-${{ github.event.issue.number }}-${{ env.TIMESTAMP }}
-#
-#          git add .
-#          git commit -m "Adding ${{ steps.parse-issue.outputs.SUBMISSION_NAME }}"
-#          git push origin submission-${{ github.event.issue.number }}-${{ env.TIMESTAMP }}
-
-      - name: Create Pull Request
+      - name: Commit changes and create Pull Request
         if: ${{ success() }}
         id: cpr
         uses: peter-evans/create-pull-request@v3
         with:
           commit-message: Add [${{ steps.parse-issue.outputs.SUBMISSION_REPO }}] to list.
           title: Add ${{ steps.parse-issue.outputs.SUBMISSION_NAME }} to list.
+          body: |
+            Add ${{ steps.parse-issue.outputs.SUBMISSION_NAME }} to list.
+
+            Closes #${{ github.event.issue.number }}
           branch: submission-${{ github.event.issue.number }}-${{ env.TIMESTAMP }}
           base: main
 
