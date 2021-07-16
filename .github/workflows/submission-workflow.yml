@@ -21,7 +21,7 @@ on:
 jobs:
   
   parse-issue:
-    if: ${{ startsWith(github.event.issue.title, 'submission-') }}
+    if: ${{ startsWith(github.event.issue.title, '[Submission]:') }}
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 2
