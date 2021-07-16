@@ -77,7 +77,7 @@ jobs:
 
           git add -A
           git commit -m "Adding ${{ steps.parse-issue.outputs.SUBMISSION_NAME }}"
-          git push --set-upstream origin submission-2
+          git push --set-upstream origin submission-${{ github.event.issue.number }}-${{ env.TIMESTAMP }}
 
       - name: Create Pull Request
         if: ${{ success() }}
