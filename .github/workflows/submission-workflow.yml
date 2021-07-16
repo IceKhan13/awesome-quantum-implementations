@@ -28,6 +28,8 @@ jobs:
       matrix:
         python-version: [3.7]
     steps:
+      - name: generate FOO unique variable based on timestamp
+        run: echo TIMESTAMP=$(date +%s) >> $GITHUB_ENV
       - name: Get $github data
         run: echo "$GITHUB_CONTEXT"
         env:
@@ -71,7 +73,7 @@ jobs:
           git config --global user.name "your username"
           git config --global user.email "your email"
 
-          git checkout -b submission-${{ github.event.issue.number }}
+          git checkout -b submission-${{ github.event.issue.number }}-${{ env.TIMESTAMP }}
 
           git add -A
           git commit -m "Adding ${{ steps.parse-issue.outputs.SUBMISSION_NAME }}"
