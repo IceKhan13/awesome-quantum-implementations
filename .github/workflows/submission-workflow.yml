@@ -56,6 +56,7 @@ jobs:
 
       - name: Install submitted deps
         run: |
+          cd testing-${{ env.TIMESTAMP }}/${{ steps.parse-issue.outputs.SUBMISSION_NAME }}
           python3 -m venv ./env-${{ env.TIMESTAMP }}
           source env-${{ env.TIMESTAMP }}/bin/activate
           python -m pip install --upgrade pip
@@ -64,11 +65,15 @@ jobs:
 
       - name: Test submitted deps
         run: |
+          cd testing-${{ env.TIMESTAMP }}/${{ steps.parse-issue.outputs.SUBMISSION_NAME }}
+          source env-${{ env.TIMESTAMP }}/bin/activate
           pip install pytest
           pytest
 
       - name: Cleanup submitted repo
         run: |
+          cd testing-${{ env.TIMESTAMP }}/${{ steps.parse-issue.outputs.SUBMISSION_NAME }}
+          source env-${{ env.TIMESTAMP }}/bin/activate
           deactivate
           cd ../../
           rm -rf testing-${{ env.TIMESTAMP }}
