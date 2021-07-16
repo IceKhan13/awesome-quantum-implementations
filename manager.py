@@ -55,7 +55,7 @@ class Manager:
 
     def generate_readme(self):
         """ Generates readme with list of repos. """
-        template = env.get_template("README.md")
+        template = env.get_template("readme.md")
         with open("./README.md", "w") as f:
             f.write(template.render(repos=self.entries))
 
