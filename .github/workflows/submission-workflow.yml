@@ -28,7 +28,7 @@ jobs:
       matrix:
         python-version: [3.7]
     steps:
-      - name: generate FOO unique variable based on timestamp
+      - name: generate timestamp variable
         run: echo TIMESTAMP=$(date +%s) >> $GITHUB_ENV
 
       - name: Get $github data
@@ -40,24 +40,38 @@ jobs:
         id: parse-issue
         run: |
           echo 1
-          echo '::set-output name=SUBMISSION_REPO::https://github.com/Qiskit/qiskit-terra.git'
-          echo '::set-output name=SUBMISSION_NAME::qiskit-terra'
-          echo '::set-output name=SUBMISSION_DESCRIPTION::Terra'
-
-      # - name: clone repo
-      #   run: |
-      #     git clone ${{ steps.parse-issue.outputs.SUBMISSION_REPO }}"
-      #     cd ${{ steps.parse-issue.outputs.SUBMISSION_NAME }}"
-      # - name: install deps
-      #   run: |
-      #     pip install -r requirements.txt
-      # - name: run tests
-      #   run: |
-      #     pip install pytest
-      #     pytest
+          echo '::set-output name=SUBMISSION_REPO::https://github.com/IceKhan13/demo-implementation'
+          echo '::set-output name=SUBMISSION_NAME::demo-implementations'
+          echo '::set-output name=SUBMISSION_DESCRIPTION::Demo'
 
       - uses: actions/checkout@v2
         if: ${{ success() }}
+
+      - name: Clone submitted repo
+        run: |
+          mkdir testing-${{ env.TIMESTAMP }}
+          cd testing-${{ env.TIMESTAMP }}
+          git clone ${{ steps.parse-issue.outputs.SUBMISSION_REPO }}"
+          cd ${{ steps.parse-issue.outputs.SUBMISSION_NAME }}
+
+      - name: Install submitted deps
+        run: |
+          python3 -m venv ./env-${{ env.TIMESTAMP }}
+          source env-${{ env.TIMESTAMP }}/bin/activate
+          python -m pip install --upgrade pip
+          cat requirements.txt
+          pip install -r requirements.txt
+
+      - name: Test submitted deps
+        run: |
+          pip install pytest
+          pytest
+
+      - name: Cleanup submitted repo
+        run: |
+          deactivate
+          cd ../../
+          rm -rf testing-${{ env.TIMESTAMP }}
 
       - name: Install dependencies
         if: ${{ success() }}
@@ -76,7 +90,7 @@ jobs:
         id: cpr
         uses: peter-evans/create-pull-request@v3
         with:
-          commit-message: Add [${{ steps.parse-issue.outputs.SUBMISSION_REPO }}] to list.
+          commit-message: [Submission]: Add [${{ steps.parse-issue.outputs.SUBMISSION_REPO }}] to list.
           title: Add ${{ steps.parse-issue.outputs.SUBMISSION_NAME }} to list.
           body: |
             Add ${{ steps.parse-issue.outputs.SUBMISSION_NAME }} to list.
@@ -91,6 +105,5 @@ jobs:
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
-            This is a multi-line test comment on successfull submission! :sparkles:
-
-            Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}
+            Successfull submission! :sparkles:
+            PR #${{ steps.cpr.outputs.pull-request-number }}
