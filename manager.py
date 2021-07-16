@@ -1,4 +1,5 @@
 import fire
+import re
 import json
 from typing import List
 from jinja2 import Environment, PackageLoader, select_autoescape
@@ -58,6 +59,17 @@ class Manager:
         template = env.get_template("readme.md")
         with open("./README.md", "w") as f:
             f.write(template.render(repos=self.entries))
+
+    def parse_issue_body(self, body: str):
+        """ Parse issue body. """
+        github_repo_pattern = r"### Github repo\\r\\n\\r\\nhttps://github.com/([\w\-\_]+)/([\w\-\_]+)\\r\\n\\r\\n" \
+                              r"### Description\\r\\n\\r\\n(.*)"
+        res = re.findall(github_repo_pattern, body)
+        if len(res) > 0:
+            account, repo_name, description = res[0]
+            print('::set-output name=SUBMISSION_REPO::https://github.com/{}/{}'.format(account, repo_name))
+            print('::set-output name=SUBMISSION_NAME::{}'.format(repo_name))
+            print('::set-output name=SUBMISSION_DESCRIPTION::{}'.format(description))
 
 
 if __name__ == '__main__':
