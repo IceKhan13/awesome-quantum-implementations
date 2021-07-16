@@ -1,0 +1,29 @@
+name: Project submission
+description: File a new project submission
+title: "[Submission]: "
+labels: []
+assignees:
+  - octocat
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Provide information about your project.
+  - type: input
+    id: repo
+    attributes:
+      label: Github repo
+      description: Link to your github repo with project you want to submit
+      placeholder: https://github.com/Qiskit/qiskit-terra
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Short description of the project.
+      placeholder: Tell us about your work!
+      value: "..."
+    validations:
+      required: true
+ 

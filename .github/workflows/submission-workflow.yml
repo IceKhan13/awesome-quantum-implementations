@@ -1,5 +1,19 @@
 name: Submission workflow
 
+### 
+# - parse issue
+# - get repository link
+# - clone repo
+# - install deps
+# - run tests, lint, coverage
+# - if success:
+# -- comment of success
+# -- create PR with change to readme
+# -- link pr to issue
+# - if something went wrong:
+# -- create an issue in a repo
+# -- comment in issue about error and link new issue
+
 on:
   issues:
     types: [opened, edited]
@@ -7,7 +21,7 @@ on:
 jobs:
   
   parse-issue:
-    #if: ${{ startsWith(github.event.issue.name, 'submission-') }}
+    if: ${{ startsWith(github.event.issue.title, 'submission-') }}
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 2
