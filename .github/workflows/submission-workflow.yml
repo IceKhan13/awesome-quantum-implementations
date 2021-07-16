@@ -41,7 +41,7 @@ jobs:
         run: |
           echo 1
           echo '::set-output name=SUBMISSION_REPO::https://github.com/IceKhan13/demo-implementation'
-          echo '::set-output name=SUBMISSION_NAME::demo-implementations'
+          echo '::set-output name=SUBMISSION_NAME::demo-implementation'
           echo '::set-output name=SUBMISSION_DESCRIPTION::Demo'
 
       - uses: actions/checkout@v2
@@ -51,15 +51,7 @@ jobs:
         run: |
           mkdir testing-${{ env.TIMESTAMP }}
           cd testing-${{ env.TIMESTAMP }}
-          echo "Path"
-          pwd
-          echo "Tree"
-          ls
           git clone ${{ steps.parse-issue.outputs.SUBMISSION_REPO }}
-          echo "Path"
-          pwd
-          echo "Tree"
-          ls
           cd ${{ steps.parse-issue.outputs.SUBMISSION_NAME }}
 
       - name: Install submitted deps
