@@ -48,7 +48,7 @@ jobs:
       - name: Parse submission details
         id: parse-issue
         run: |
-          python manager.py parse_issue_body --body=${{ github.event.issue.body }}
+          python manager.py parse_issue_body --body="${{ github.event.issue.body }}"
 
       - name: Clone submitted repo
         run: |
