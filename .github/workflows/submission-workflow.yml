@@ -30,10 +30,12 @@ jobs:
     steps:
       - name: generate FOO unique variable based on timestamp
         run: echo TIMESTAMP=$(date +%s) >> $GITHUB_ENV
+
       - name: Get $github data
         run: echo "$GITHUB_CONTEXT"
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
+
       - name: Parse submission details
         id: parse-issue
         run: |
@@ -41,6 +43,7 @@ jobs:
           echo '::set-output name=SUBMISSION_REPO::https://github.com/Qiskit/qiskit-terra.git'
           echo '::set-output name=SUBMISSION_NAME::qiskit-terra'
           echo '::set-output name=SUBMISSION_DESCRIPTION::Terra'
+
       # - name: clone repo
       #   run: |
       #     git clone ${{ steps.parse-issue.outputs.SUBMISSION_REPO }}"
@@ -52,6 +55,7 @@ jobs:
       #   run: |
       #     pip install pytest
       #     pytest
+
       - uses: actions/checkout@v2
         if: ${{ success() }}
 
@@ -77,7 +81,7 @@ jobs:
 
           git add .
           git commit -m "Adding ${{ steps.parse-issue.outputs.SUBMISSION_NAME }}"
-          git push origin submission-${{ github.event.issue.number }}-${{ env.TIMESTAMP }}
+          git push --set-upstream origin submission-${{ github.event.issue.number }}-${{ env.TIMESTAMP }}
 
       - name: Create Pull Request
         if: ${{ success() }}
