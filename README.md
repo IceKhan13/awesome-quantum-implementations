@@ -11,6 +11,8 @@ Curated by community list of implementations of quantum algorithms, software pac
 
 - https://github.com/Qiskit/qiskit-terra.git by https://github.com/IceKhan13
 
+- https://github.com/Qiskit/qiskit-terra.git by https://github.com/IceKhan13
+
 
 ### Contribution guide
 
