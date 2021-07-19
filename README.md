@@ -4,8 +4,8 @@
   </a>
 </p>
 
-Awesome quantum implementations
-===============================
+Awesome quantum
+===============
 
 Curated by community list of implementations of quantum algorithms, software packages, 
 
@@ -24,8 +24,9 @@ Curated by community list of implementations of quantum algorithms, software pac
 
 ### Community
 
+- https://github.com/IceKhan13/demo-implementation by https://github.com/IceKhan13
 
-
+  
 
 ### Requirements for project
 
@@ -33,4 +34,5 @@ Any project should follow submission guidelines:
 - tests
 - documentation
 - coverage
+
 
