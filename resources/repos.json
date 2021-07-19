@@ -1,22 +1,3 @@
 [
-  {
-    "link": "link",
-    "author": "author",
-    "description": "dopetests"
-  },
-  {
-    "link": "link2",
-    "author": "author2",
-    "description": "dopetests"
-  },
-  {
-    "link": "https://github.com/Qiskit/qiskit-terra.git",
-    "author": "https://github.com/IceKhan13",
-    "description": "Terra"
-  },
-  {
-    "link": "https://github.com/IceKhan13/demo-implementation",
-    "author": "https://github.com/IceKhan13",
-    "description": "Demo"
-  }
+
 ]

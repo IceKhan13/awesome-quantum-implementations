@@ -63,10 +63,16 @@ class Manager:
     def parse_issue_body(self, body: str):
         """ Parse issue body. """
         github_pattern = r"https://github.com/([\w\-\_]+)/([\w\-\_]+)"
+        description_pattern = r"### Description(.|\n)*"
+
         github_info_res = re.findall(github_pattern, body)
+        description_res = re.findall(description_pattern, body)
+
         if len(github_info_res) > 0:
             account, repo = github_info_res[0]
-            description = "" # TODO: implement
+            description = ""
+            if len(description_res) > 0:
+                description = description_res[0]
             print('::set-output name=SUBMISSION_REPO::https://github.com/{}/{}'.format(account, repo))
             print('::set-output name=SUBMISSION_NAME::{}'.format(repo))
             print('::set-output name=SUBMISSION_DESCRIPTION::{}'.format(description))
