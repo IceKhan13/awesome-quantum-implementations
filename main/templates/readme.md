@@ -4,10 +4,10 @@
   </a>
 </p>
 
-Awesome quantum
+Awesome Qiskit ![ecosystem](https://img.shields.io/badge/Qiskit-Ecosystem-blueviolet)
 ===============
 
-Curated by community list of implementations of quantum algorithms, software packages, 
+Curated by community list of implementations of quantum algorithms, software packages and tools for Qiskit Ecosystem, 
 
 ## Repositories:
 
@@ -22,7 +22,11 @@ Curated by community list of implementations of quantum algorithms, software pac
 - https://github.com/Qiskit/qiskit.org
 
 
-### Community
+### Ecosystem
+
+- 
+
+### Candidates
 {% for repo in repos %}
 - {{ repo.link }} by {{ repo.author }}
 {% endfor %}
