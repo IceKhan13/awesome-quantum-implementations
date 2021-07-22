@@ -29,5 +29,5 @@ jobs:
         pip install -r requirements.txt
     - name: Test using tox envs
       run: |
-        echo ${{ github.TOX_ENV }}
+        echo ${{ env.TOX_ENV }}
         #tox -e
