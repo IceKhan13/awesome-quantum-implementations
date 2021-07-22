@@ -1,4 +1,7 @@
+"""Entities."""
+
 class RepoEntry:
+    """Entry."""
     def __init__(self,
                  repo_link: str,
                  repo_author: str,

@@ -9,7 +9,7 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.6]
+        python-version: [3.6, 3.7, 3.8, 3.9]
 
     steps:
     - uses: actions/checkout@v1
@@ -25,9 +25,10 @@ jobs:
         echo TOX_ENV=$tox_env >> $GITHUB_ENV
     - name: Install dependencies
       run: |
+        cd lib
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+        pip install -r requirements-dev.txt
     - name: Test using tox envs
       run: |
-        echo ${{ env.TOX_ENV }}
-        #tox -e
+        tox ${{ env.TOX_ENV }}
