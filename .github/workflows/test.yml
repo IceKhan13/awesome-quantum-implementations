@@ -23,7 +23,6 @@ jobs:
         tox_env="-epy${pver/./}"
         echo tox_env
         echo TOX_ENV=tox_env >> $GITHUB_ENV
-        echo "::set-env name=tox_env::$tox_env"
     - name: Install dependencies
       run: |
         cd lib
