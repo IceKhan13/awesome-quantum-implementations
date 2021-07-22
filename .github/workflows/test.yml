@@ -19,7 +19,8 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Set up tox env
       run: |
-        tox_env="-epy${${{ matrix.python-version }}/./}"
+        pver=${{ matrix.python-version }}
+        tox_env="-epy${pver/./}"
         echo tox_env
         echo "::set-env name=tox_env::$tox_env"
     - name: Install dependencies
