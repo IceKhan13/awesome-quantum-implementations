@@ -9,6 +9,10 @@ Awesome Qiskit ![ecosystem](https://img.shields.io/badge/Qiskit-Ecosystem-bluevi
 
 Curated by community list of implementations of quantum algorithms, software packages and tools for Qiskit Ecosystem, 
 
+[<img src="https://s18955.pcdn.co/wp-content/uploads/2018/02/github.png" width="25"/>](https://github.com/user/repository/subscription)
+
+
+
 ## Repositories:
 
 ### Core

@@ -1,0 +1,33 @@
+name: Tests
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: [3.6]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Set up tox env
+      run: |
+        tox_env="-epy${${{ matrix.python-version }}/./}"
+        echo tox_env
+        echo "::set-env name=tox_env::$tox_env"
+    - name: Install dependencies
+      run: |
+        cd lib
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test using tox envs
+      run: |
+        echo ${{ github.tox_env }}
+        #tox -e
