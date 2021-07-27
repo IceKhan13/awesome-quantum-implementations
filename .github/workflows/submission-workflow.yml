@@ -20,7 +20,7 @@ on:
 
 jobs:
   
-  parse-issue:
+  submission-job:
     if: ${{ startsWith(github.event.issue.title, '[Submission]:') }}
     runs-on: ubuntu-latest
     strategy:
