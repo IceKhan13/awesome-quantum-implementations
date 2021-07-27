@@ -8,5 +8,15 @@
       "implementation",
       "algorithm"
     ]
+  },
+  {
+    "link": "https://github.com/IceKhan13/demo-implementation",
+    "author": "https://github.com/IceKhan13",
+    "description": "Description for demo implementation",
+    "tags": [
+      "implementation",
+      "optimization",
+      "ML"
+    ]
   }
 ]
