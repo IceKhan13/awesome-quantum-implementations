@@ -49,6 +49,7 @@ Requirements: Repository is missing one of proposed guidelines
 
 |  Name | Description  | Tags  |
 |---|---|---|
+|https://github.com/IceKhan13/demo-implementation | Demo description for demo implementation |  ![plugin](https://img.shields.io/badge/plugin-1f425f.svg)  ![implementation](https://img.shields.io/badge/implementation-1f425f.svg)  ![algorithm](https://img.shields.io/badge/algorithm-1f425f.svg)   |
 
 
 ## ✏️ How to Contribute

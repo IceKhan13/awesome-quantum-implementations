@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "link": "https://github.com/IceKhan13/demo-implementation",
+    "author": "https://github.com/IceKhan13",
+    "description": "Demo description for demo implementation",
+    "tags": [
+      "plugin",
+      "implementation",
+      "algorithm"
+    ]
+  }
+]
