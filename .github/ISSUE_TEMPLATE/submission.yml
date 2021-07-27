@@ -26,4 +26,18 @@ body:
       value: "..."
     validations:
       required: true
- 
+  - type: dropdown
+    id: tags
+    attributes:
+      label: Tags
+      multiple: true
+      options:
+        - tool
+        - plugin
+        - implementation
+        - chemistry
+        - optimization
+        - ML
+        - nature
+        - simulators
+        - algorithm
