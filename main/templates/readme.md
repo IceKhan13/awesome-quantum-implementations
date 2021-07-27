@@ -37,6 +37,9 @@ Requirements: Repository follows all guidelines: documentation, tests/coverage (
 
 |  Name | Description  | Tags  |
 |---|---|---|
+{% for repo in repos -%}
+|{{ repo.link }} | {{ repo.description }} | {% for tag in repo.tags %} ![{{tag}}](https://img.shields.io/badge/{{tag}}-1f425f.svg) {% endfor %}  |
+{% endfor %}
 
 ### LVL 2 ![ecosystem](https://img.shields.io/badge/Qiskit-Candidate%20LVL2-blueviolet)
 
@@ -44,6 +47,9 @@ Requirements: Repository is missing one of proposed guidelines
 
 |  Name | Description  | Tags  |
 |---|---|---|
+{% for repo in repos -%}
+|{{ repo.link }} | {{ repo.description }} | {% for tag in repo.tags %} ![{{tag}}](https://img.shields.io/badge/{{tag}}-1f425f.svg) {% endfor %}  |
+{% endfor %}
 
 ### LVL 3 ![ecosystem](https://img.shields.io/badge/Qiskit-Candidate%20LVL3-blueviolet)
 
