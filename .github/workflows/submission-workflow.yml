@@ -84,7 +84,7 @@ jobs:
       - name: Update readme
         if: ${{ success() }}
         run: |
-          python manager.py add_repo --repo_link=${{ steps.parse-issue.outputs.SUBMISSION_REPO }} --repo_author=${{ github.event.issue.user.html_url }} --repo_description=${{ steps.parse-issue.outputs.SUBMISSION_DESCRIPTION }}
+          python manager.py add_repo --repo_link=${{ steps.parse-issue.outputs.SUBMISSION_REPO }} --repo_author=${{ github.event.issue.user.html_url }} --repo_description=${{ steps.parse-issue.outputs.SUBMISSION_DESCRIPTION }} --repo_tags="${{ steps.parse-issue.outputs.SUBMISSION_TAGS }}"
           python manager.py generate_readme
 
       - name: Commit changes and create Pull Request
