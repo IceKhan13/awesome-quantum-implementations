@@ -52,5 +52,16 @@
       "chemistry",
       "optimization"
     ]
+  },
+  {
+    "link": "https://github.com/IceKhan13/demo-implementation",
+    "author": "https://github.com/IceKhan13",
+    "description": "...asdasdasd",
+    "tags": [
+      "plugin",
+      "chemistry",
+      "nature",
+      "simulators"
+    ]
   }
 ]
