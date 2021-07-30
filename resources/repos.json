@@ -41,5 +41,16 @@
       "ML",
       "nature"
     ]
+  },
+  {
+    "link": "https://github.com/IceKhan13/demo-implementation",
+    "author": "https://github.com/IceKhan13",
+    "description": "descriotio",
+    "tags": [
+      "plugin",
+      "implementation",
+      "chemistry",
+      "optimization"
+    ]
   }
 ]
