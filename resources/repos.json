@@ -63,5 +63,16 @@
       "nature",
       "simulators"
     ]
+  },
+  {
+    "link": "https://github.com/IceKhan13/demo-implementation",
+    "author": "https://github.com/IceKhan13",
+    "description": "Description !",
+    "tags": [
+      "implementation",
+      "chemistry",
+      "nature",
+      "algorithm"
+    ]
   }
 ]
