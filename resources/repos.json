@@ -83,5 +83,15 @@
       "tool",
       "implementation"
     ]
+  },
+  {
+    "link": "https://github.com/IceKhan13/demo-implementation",
+    "author": "https://github.com/IceKhan13",
+    "description": "...asdjahsdkjahsdkhjasd",
+    "tags": [
+      "chemistry",
+      "ML",
+      "nature"
+    ]
   }
 ]

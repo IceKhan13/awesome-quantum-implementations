@@ -45,6 +45,7 @@ Requirements: Repository follows all guidelines: documentation, tests/coverage (
 |https://github.com/IceKhan13/demo-implementation | ...asdasdasd |  ![plugin](https://img.shields.io/badge/plugin-1f425f.svg)  ![chemistry](https://img.shields.io/badge/chemistry-1f425f.svg)  ![nature](https://img.shields.io/badge/nature-1f425f.svg)  ![simulators](https://img.shields.io/badge/simulators-1f425f.svg)   |
 |https://github.com/IceKhan13/demo-implementation | Description ! |  ![implementation](https://img.shields.io/badge/implementation-1f425f.svg)  ![chemistry](https://img.shields.io/badge/chemistry-1f425f.svg)  ![nature](https://img.shields.io/badge/nature-1f425f.svg)  ![algorithm](https://img.shields.io/badge/algorithm-1f425f.svg)   |
 |https://github.com/IceKhan13/demo-implementation | ...asdasdasd |  ![tool](https://img.shields.io/badge/tool-1f425f.svg)  ![implementation](https://img.shields.io/badge/implementation-1f425f.svg)   |
+|https://github.com/IceKhan13/demo-implementation | ...asdjahsdkjahsdkhjasd |  ![chemistry](https://img.shields.io/badge/chemistry-1f425f.svg)  ![ML](https://img.shields.io/badge/ML-1f425f.svg)  ![nature](https://img.shields.io/badge/nature-1f425f.svg)   |
 
 
 ### LVL 2 ![ecosystem](https://img.shields.io/badge/Qiskit-Candidate%20LVL2-blueviolet)
@@ -61,6 +62,7 @@ Requirements: Repository is missing one of proposed guidelines
 |https://github.com/IceKhan13/demo-implementation | ...asdasdasd |  ![plugin](https://img.shields.io/badge/plugin-1f425f.svg)  ![chemistry](https://img.shields.io/badge/chemistry-1f425f.svg)  ![nature](https://img.shields.io/badge/nature-1f425f.svg)  ![simulators](https://img.shields.io/badge/simulators-1f425f.svg)   |
 |https://github.com/IceKhan13/demo-implementation | Description ! |  ![implementation](https://img.shields.io/badge/implementation-1f425f.svg)  ![chemistry](https://img.shields.io/badge/chemistry-1f425f.svg)  ![nature](https://img.shields.io/badge/nature-1f425f.svg)  ![algorithm](https://img.shields.io/badge/algorithm-1f425f.svg)   |
 |https://github.com/IceKhan13/demo-implementation | ...asdasdasd |  ![tool](https://img.shields.io/badge/tool-1f425f.svg)  ![implementation](https://img.shields.io/badge/implementation-1f425f.svg)   |
+|https://github.com/IceKhan13/demo-implementation | ...asdjahsdkjahsdkhjasd |  ![chemistry](https://img.shields.io/badge/chemistry-1f425f.svg)  ![ML](https://img.shields.io/badge/ML-1f425f.svg)  ![nature](https://img.shields.io/badge/nature-1f425f.svg)   |
 
 
 ### LVL 3 ![ecosystem](https://img.shields.io/badge/Qiskit-Candidate%20LVL3-blueviolet)
@@ -75,6 +77,7 @@ Requirements: Repository is missing one of proposed guidelines
 |https://github.com/IceKhan13/demo-implementation | ...asdasdasd |  ![plugin](https://img.shields.io/badge/plugin-1f425f.svg)  ![chemistry](https://img.shields.io/badge/chemistry-1f425f.svg)  ![nature](https://img.shields.io/badge/nature-1f425f.svg)  ![simulators](https://img.shields.io/badge/simulators-1f425f.svg)   |
 |https://github.com/IceKhan13/demo-implementation | Description ! |  ![implementation](https://img.shields.io/badge/implementation-1f425f.svg)  ![chemistry](https://img.shields.io/badge/chemistry-1f425f.svg)  ![nature](https://img.shields.io/badge/nature-1f425f.svg)  ![algorithm](https://img.shields.io/badge/algorithm-1f425f.svg)   |
 |https://github.com/IceKhan13/demo-implementation | ...asdasdasd |  ![tool](https://img.shields.io/badge/tool-1f425f.svg)  ![implementation](https://img.shields.io/badge/implementation-1f425f.svg)   |
+|https://github.com/IceKhan13/demo-implementation | ...asdjahsdkjahsdkhjasd |  ![chemistry](https://img.shields.io/badge/chemistry-1f425f.svg)  ![ML](https://img.shields.io/badge/ML-1f425f.svg)  ![nature](https://img.shields.io/badge/nature-1f425f.svg)   |
 
 
 ## ✏️ How to Contribute
